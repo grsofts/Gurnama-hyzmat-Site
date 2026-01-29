@@ -1,0 +1,33 @@
+{
+  "menu": {
+    "home": "Home",
+    "projects": "Projects",
+    "services": "Services",
+    "aboutus": "About Us",
+    "contacts": "Contacts"
+  },
+  "actions": {
+    
+  },
+  "buttons": {
+    "yes": "Yes",
+    "no": "No",
+    "readmore": "Read More",
+    "save": "Save",
+    "confirm": "Confirm",
+    "feedback" : "Contact us",
+    "send": "Send"
+  },
+  "fields": {
+    "name": "Your name",
+    "mail": "Your Email",
+    "subject": "Subject",
+    "message": "Your message"
+  },
+  "our":"Our",
+  "services":"Services",
+  "projects":"Projects",
+  "partners":"Partners",
+  "testimonial" : "Testimonial",
+  "clients":"Clients"
+}

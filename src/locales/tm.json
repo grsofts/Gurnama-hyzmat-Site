@@ -1,0 +1,33 @@
+{
+  "menu": {
+    "home": "Baş sahypa",
+    "projects": "Edilen işler",
+    "services": "Hyzmatlar",
+    "aboutus": "Biz hakynda",
+    "contacts": "Kontaktlar"
+  },
+  "actions": {
+    
+  },
+  "buttons": {
+    "yes": "Hawa",
+    "no": "Ýok",
+    "readmore": "Giňişleýin",
+    "save": "Ýatda sakla",
+    "confirm": "Tassykla",
+    "feedback" : "Habar galdyrmak",
+    "send": "Ugratmak"
+  },
+  "fields": {
+    "name": "Siziň adyňyz",
+    "mail": "Siziň Email salgyňyz",
+    "subject": "Hatyň mowzugy",
+    "message": "Siziň hatyňyz"
+  },
+  "our":"Biziň",
+  "services":"Hyzmatlarymyz",
+  "projects":"Işlerimiz",
+  "partners":"Hyzmatdaşlarymyz",
+  "testimonial" : "Teswirleri",
+  "clients":"Müşderileriň"
+}

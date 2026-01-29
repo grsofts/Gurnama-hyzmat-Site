@@ -1,0 +1,33 @@
+{
+  "menu": {
+    "home": "Главная",
+    "projects": "Проекты",
+    "services": "Услуги",
+    "aboutus": "О нас",
+    "contacts": "Контакты"
+  },
+  "actions": {
+    
+  },
+  "buttons": {
+    "yes": "Да",
+    "no": "Нет",
+    "readmore": "Подробнее",
+    "save": "Сохранить",
+    "confirm": "Подтвердить",
+    "feedback" : "Оставить сообщения",
+    "send": "Отправить"
+  },
+  "fields": {
+    "name": "Ваше имя",
+    "mail": "Ваш Email адрес",
+    "subject": "Тема сообщения",
+    "message": "Сообщения"
+  },
+  "our":"Наши",
+  "services":"Услуги",
+  "projects":"Проекты",
+  "partners":"Партнеры",
+  "testimonial" : "Отзывы",
+  "clients":"Клиентов"
+}
