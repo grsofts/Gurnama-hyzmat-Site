@@ -13,7 +13,7 @@ const Header2 = () => {
     	<div className="main-box">
             <div className="outer-container clearfix">
                 <div className="logo-box">
-                    <div className="logo"><a href="index.html"><img src="/src/assets/images/logo_white.png" className="py-4" style={{width: '290px', height: 'auto'}} alt="" /></a></div>
+                    <div className="logo"><a href="home"><img src="/src/assets/images/logo_white.png" className="py-4" style={{width: '290px', height: 'auto'}} alt="" /></a></div>
                 </div>
                 
                 <div className="nav-outer clearfix">
