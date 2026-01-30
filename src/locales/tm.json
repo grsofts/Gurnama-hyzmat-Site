@@ -4,7 +4,8 @@
     "projects": "Edilen işler",
     "services": "Hyzmatlar",
     "aboutus": "Biz hakynda",
-    "contacts": "Kontaktlar"
+    "contacts": "Kontaktlar",
+    "certificates": "Biziň sylaglanmalarymyz"
   },
   "actions": {
     
@@ -29,5 +30,9 @@
   "projects":"Işlerimiz",
   "partners":"Hyzmatdaşlarymyz",
   "testimonial" : "Teswirleri",
-  "clients":"Müşderileriň"
+  "clients":"Müşderileriň",
+  "question_title" : "Soraglaryňyz barmy?",
+  "question_subtitle" : "Islendik wagt biz bilen habarlaşyp bilersiňiz",
+  "pages": "Sahypalar",
+  "certificate_subtitle" : "Bizim işimiziň hilini we ygtybarlylygyny tassyklaýan resmi resminamalar"
 }

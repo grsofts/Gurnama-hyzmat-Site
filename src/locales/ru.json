@@ -4,7 +4,8 @@
     "projects": "Проекты",
     "services": "Услуги",
     "aboutus": "О нас",
-    "contacts": "Контакты"
+    "contacts": "Контакты",
+    "certificates": "Наши Сертификаты"
   },
   "actions": {
     
@@ -29,5 +30,9 @@
   "projects":"Проекты",
   "partners":"Партнеры",
   "testimonial" : "Отзывы",
-  "clients":"Клиентов"
+  "clients":"Клиентов",
+  "question_title" : "Есть вопросы?",
+  "question_subtitle" : "Звоните нам в любое удобное для вас время",
+  "pages": "Страницы",
+  "certificate_subtitle" : "Официальные документы, подтверждающие качество и надёжность нашей работы"
 }

@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 const Title = () => {
     const {t} = useTranslation();
-    return (<section className="page-title" style={{ backgroundImage: 'url(/src/assets/images/background/title_about.png)' }}>
+    return (<section className="page-title" style={{ backgroundImage: 'url(/src/assets/images/background/bg4.jpg)' }}>
     	<div className="auto-container">
         	<div className="clearfix">
             	<div className="title-column">

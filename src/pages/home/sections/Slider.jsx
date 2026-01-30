@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import bannersService from "../../../api/sliders.service";
-import http from "../../../api/http";
 import { useTranslation } from "react-i18next";
+import { imagePath } from "../../../utils/constants";
 
 const Slider = () => {
   // const [loading, setLoading] = useState(false);
@@ -32,9 +32,9 @@ const Slider = () => {
                 <ul>
                 	{
                     banners.map(sl => (
-                      <li key={sl.id} data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb={`${http.defaults.baseURL}/uploads${sl.image}`} data-saveperformance="off"  data-title="Awesome Title Here">
-                        <img src={`${http.defaults.baseURL}/uploads${sl.image}`}  alt=""  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat"/> 
-                        
+                      <li key={sl.id} data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb={`${imagePath}${sl.image}`} data-saveperformance="off"  data-title="Awesome Title Here">
+                        <img src={`${imagePath}${sl.image}`}  alt=""  data-bgposition="center bottom" data-bgfit="cover" data-bgrepeat="no-repeat"/> 
+
                         <div className="transparent-bg-layer-full"></div>
                         
                         <div className="tp-caption sfb sft tp-resizeme"

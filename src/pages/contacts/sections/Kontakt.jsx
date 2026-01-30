@@ -1,4 +1,7 @@
+import useSite from "../../../utils/useSite";
+
 const Kontakt = () => {
+    const  { contacts } = useSite();
     return (
         <section className="info-section">
     	<div className="auto-container">
@@ -11,7 +14,7 @@ const Kontakt = () => {
                             <div className="icon wow zoomInStable" data-wow-delay="0ms" data-wow-duration="1500ms"><span className="flaticon-location"></span></div>
                             <h4>Find Us</h4>
                             <ul>
-                                <li>7300 N Aliante Pkwy, North Las Vegas, NV 89084, United States</li>
+                                <li>{contacts.filter(c => c.key === 'address').map(c => c.value)}</li>
                             </ul>
                         </div>
                     </div>
@@ -21,8 +24,7 @@ const Kontakt = () => {
                             <div className="icon wow zoomInStable" data-wow-delay="300ms" data-wow-duration="1500ms"><span className="flaticon-symbol"></span></div>
                             <h4>Mail Us</h4>
                             <ul>
-                                <li>contact@factorian.com</li>
-                                <li>solution@factorian.com</li>
+                                <li>{contacts.filter(c => c.key === 'email').map(c => c.value)}</li>
                             </ul>
                         </div>
                     </div>
@@ -32,8 +34,7 @@ const Kontakt = () => {
                             <div className="icon wow zoomInStable" data-wow-delay="600ms" data-wow-duration="1500ms"><span className="flaticon-technology-1"></span></div>
                             <h4>Call us</h4>
                             <ul>
-                                <li>+190 9213 221 330</li>
-                                <li>+190 8613 919 110</li>
+                                <li>{contacts.filter(c => c.key === 'phone').map(c => c.value)}</li>
                             </ul>
                         </div>
                     </div>

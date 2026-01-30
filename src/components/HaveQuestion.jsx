@@ -8,8 +8,8 @@ const HaveQuestion = () => {
         	<div className="inner-box clearfix">
                 <div className="left-column">
                     <div className="title-outer">
-                        <h4>Have question?</h4>
-                        <h2>Give Us a call anytime you want</h2>
+                        <h4>{t('question_title')}</h4>
+                        <h2>{t('question_subtitle')}</h2>
                     </div>
                 </div>
                 

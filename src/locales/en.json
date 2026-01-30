@@ -4,7 +4,8 @@
     "projects": "Projects",
     "services": "Services",
     "aboutus": "About Us",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "certificates": "Our Certificates"
   },
   "actions": {
     
@@ -29,5 +30,9 @@
   "projects":"Projects",
   "partners":"Partners",
   "testimonial" : "Testimonial",
-  "clients":"Clients"
+  "clients":"Clients",
+  "question_title" : "Have any Questions?",
+  "question_subtitle" : "Give Us a call anytime you want",
+  "pages": "Pages",
+  "certificate_subtitle" : "Official documents certifying the quality and reliability of our work"
 }

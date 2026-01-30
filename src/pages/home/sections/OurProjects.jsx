@@ -1,7 +1,13 @@
 import { useTranslation } from "react-i18next";
+import useProjects from "../../../hooks/useProjects";
+import { imagePath } from "../../../utils/constants";
 
 const OurProjects = () => {
     const {t} = useTranslation();
+    const { projects, loading, error } = useProjects();
+
+    if (loading) return <div>Загрузка…</div>
+    if (error) return <div>Ошибка загрузки</div>
     return (
         <section className="gallery-style-one" style={{ backgroundImage: "url(/src/assets/images/background/bg3.jpg)" }}>
             <div className="outer-container">
@@ -23,38 +29,26 @@ const OurProjects = () => {
                     </div>
                     
                     <div className="filter-list row clearfix">
-                        
-                        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 portfolio-item-one mix mix_all all photography ui">
-                            <div className="inner-box">
-                                <figure className="image-box"><img src="/src/assets/images/gallery/1.jpg" alt=""/></figure>
-                                <div className="overlay-box">
-                                    <div className="overlay-inner">
-                                        <div className="content">
-                                            <a href="/src/assets/images/gallery/1.jpg" className="option-btn lightbox-image" title="Image Caption Here" data-fancybox-group="example-gallery"><span className="icon flaticon-cross-2"></span></a>
+                        {
+                            projects.map((project, index) => (
+                            <div key={index} className="col-lg-4 col-md-4 col-sm-6 col-xs-12 portfolio-item-one mix mix_all all photography ui">
+                                <div className="inner-box">
+                                    <figure className="image-box"><img height={280} src={imagePath + project.images[0]?.image_url} alt=""/></figure>
+                                    <div className="overlay-box">
+                                        <div className="overlay-inner">
+                                            <div className="content">
+                                                <a href={imagePath + project.images[0]?.image_url} className="option-btn lightbox-image" title={project.title} data-fancybox-group="example-gallery"><span className="icon flaticon-cross-2"></span></a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="caption">
-                                    <h3><a href="project-single.html">Hover Dam</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 portfolio-item-one mix mix_all all design ui">
-                            <div className="inner-box">
-                                <figure className="image-box"><img src="/src/assets/images/gallery/2.jpg" alt=""/></figure>
-                                <div className="overlay-box">
-                                    <div className="overlay-inner">
-                                        <div className="content">
-                                            <a href="/src/assets/images/gallery/2.jpg" className="option-btn lightbox-image" title="Image Caption Here" data-fancybox-group="example-gallery"><span className="icon flaticon-cross-2"></span></a>
-                                        </div>
+                                    <div className="caption">
+                                        <h3><a href={'project?id='+project.id}>{project.title}</a></h3>
                                     </div>
                                 </div>
-                                <div className="caption">
-                                    <h3><a href="project-single.html">Hover Dam</a></h3>
-                                </div>
                             </div>
-                        </div>
+                            ))
+                        }
+
                         
                         <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12 portfolio-item-one mix mix_all all design  ui">
                             <div className="inner-box">

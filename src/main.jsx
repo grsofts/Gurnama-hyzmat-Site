@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router';
 
 import "./utils/language/i18n.js";
 import { LanguageProvider } from './utils/language/LanguageProvider.jsx';
+import { SiteProvider } from './utils/SiteProvider.jsx';
 
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -19,7 +20,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <LanguageProvider>
-        <Root />
+        <SiteProvider>
+          <Root />
+        </SiteProvider>
       </LanguageProvider>
     </BrowserRouter>
     

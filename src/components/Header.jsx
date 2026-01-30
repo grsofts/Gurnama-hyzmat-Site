@@ -1,13 +1,18 @@
 
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import useSite from "../utils/useSite";
+import { imagePath } from "../utils/constants";
 const Header = () => {
     const { i18n, t } = useTranslation();
     const [open, setOpen] = useState(false);
+    const { contacts } = useSite();
 
     const changeLang = (lang) => {
         i18n.changeLanguage(lang);
         setOpen(false);
+        localStorage.setItem('lang', lang);
+        window.location.reload();
     };
     return (
     <header className="header-style-one site-header">
@@ -49,7 +54,21 @@ const Header = () => {
 
                     	<ul>
                             
-                        	<li className="social-links"><a href="#"><span className="fa fa-twitter"></span></a><a href="#"><span className="fa fa-facebook-f"></span></a><a href="#"><span className="fa fa-youtube-play"></span></a><a href="#"><span className="fa fa-instagram"></span></a><a href="#"><span className="fa fa-linkedin"></span></a></li>
+                        	<li className="social-links">
+                                {
+                                    contacts?.map((c, index) => {
+                                        if (c.type === 'social') {
+                                            return (
+                                                <a key={index} target="_blank" href={c.link}>
+                                                    <span>
+                                                        <img width={14} style={{filter: 'invert(100%)'}} src={`${imagePath}${c.icon}`} alt=""/>
+                                                    </span>
+                                                </a>
+                                            );
+                                        }
+                                    })
+                                }
+                            </li>
                         </ul>
                     </div>
                     
@@ -76,16 +95,20 @@ const Header = () => {
                         <div className="upper-column info-box">
                         	<div className="icon-box"><span className="flaticon-telephone-1"></span></div>
                             <ul>
-                            	<li><strong>1-0625-762-887</strong></li>
-                                <li>support@factorian.com</li>
+                            	<li><strong style={{cursor: 'pointer'}}><a style={{color: 'inherit', textDecoration: 'none'}} href={`tel:${contacts.find(c => c.key === 'phone')?.value}`}>
+                                    {contacts.find(c => c.key === 'phone')?.value}
+                                </a></strong></li>
+                                <li style={{ textTransform: 'lowercase' }}><a style={{color: 'inherit', textDecoration: 'none'}} href={`mailto:${contacts.find(c => c.key === 'email')?.value}`}>
+                                    {contacts.find(c => c.key === 'email')?.value}
+                                </a></li>
                             </ul>
                         </div>
                         
                         <div className="upper-column info-box">
                         	<div className="icon-box"><span className="flaticon-placeholder-3"></span></div>
                             <ul>
-                            	<li><strong>20, Cadburry Road</strong></li>
-                                <li>Pennysylvennia, Philadelphia - 2137</li>
+                            	<li><strong>{contacts.find(c => c.key === 'address')?.value}</strong></li>
+                                <li><span>{contacts.find(c => c.key === 'address')?.value}</span></li>
                             </ul>
                         </div>
                         

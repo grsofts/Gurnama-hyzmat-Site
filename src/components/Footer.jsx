@@ -1,7 +1,10 @@
 import { useTranslation } from "react-i18next";
+import useSite from "../utils/useSite.jsx";
+import { imagePath } from "../utils/constants.js";
 
 const Footer = () => {
     const { t } = useTranslation();
+    const { contacts } = useSite();
   return (
     <footer className="main-footer">
         
@@ -18,9 +21,18 @@ const Footer = () => {
                                     <div className="widget-content">
                                     	<div className="text">It is my duty to distract the reader by just looiking at it </div>
                                         <ul className="contact-info">
-                                        	<li><span className="icon flaticon-envelope"></span> support@factory.com</li>
-                                            <li><span className="icon flaticon-telephone-1"></span> +91 2225 123 957</li>
-                                            <li><span className="icon flaticon-placeholder"></span> New Metro Road, Baskervile <br/>Texas - 3520, USA</li>
+                                            {
+                                                contacts?.map((contact, index) => (
+                                                    <li key={index} style={{ paddingLeft: 0}}>
+                                                        <span style={{marginRight: 10}}>
+                                                            <img src={`${imagePath}${contact.icon}`} style={{filter: 'invert(100%)', height: '24px', width: '24px'}} alt={contact.value} /> 
+                                                        </span>
+                                                        <span>
+                                                            {contact.value}
+                                                        </span>
+                                                    </li>
+                                                ))
+                                            }
                                         </ul>
                                     </div>
                                 </div>
@@ -38,7 +50,7 @@ const Footer = () => {
                             
                         	<div className="footer-column col-md-6 col-sm-6 col-xs-12">
                             	<div className="footer-widget links-widget">
-                                	<h2>Quick Links</h2>
+                                	<h2>{t('pages')}</h2>
                                     <div className="widget-content">
                                     	<ul className="list">
                                         	<li><a href="home">{t('menu.home')}</a></li>
@@ -85,7 +97,7 @@ const Footer = () => {
          	<div className="outer-container">
             	<div className="row clearfix">
                 	<div className="col-md-6 col-sm-12"><div className="copyright">Gurnama Hyzmaty &copy; <span className="year">{new Date().getFullYear()}</span>. All rights are reserved.</div></div>
-                    <div className="col-md-6 col-sm-12"><div className="developed-by">Developed by <a target="_blank" href="https://themeforest.net/user/themexriver/portfolio" className="author-name">Shaylan Group - IT Solutions</a></div></div>
+                    <div className="col-md-6 col-sm-12"><div className="developed-by">Developed by <a target="_blank" href="https://shaylan.biz/it-department" className="author-name">Shaylan Group - IT Solutions</a></div></div>
                 </div>
             </div>
          </div>
