@@ -29,10 +29,12 @@
   "services":"Услуги",
   "projects":"Проекты",
   "partners":"Партнеры",
+  "our_company": "Наша компания",
   "testimonial" : "Отзывы",
   "clients":"Клиентов",
   "question_title" : "Есть вопросы?",
   "question_subtitle" : "Звоните нам в любое удобное для вас время",
   "pages": "Страницы",
+  "last_projects": "Последние проекты",
   "certificate_subtitle" : "Официальные документы, подтверждающие качество и надёжность нашей работы"
 }

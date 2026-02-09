@@ -33,19 +33,9 @@ const OurPartners = () => {
             <ul className="sponsors-slider">
                 {
                     partners.map(pt => (
-                        <li key={pt.id} style={{ height: '190px !important'}}><a href="#"><img height={150} width={270} style={{objectFit: 'contain', height: '190px !important'}} src={`${imagePath}${pt.image}`} alt={pt.name}/></a></li>
+                        <li key={pt.id} style={{ height: '190px !important'}}><a href="#"><img height={150} width={150} style={{objectFit: 'contain', height: '190px !important'}} src={`${imagePath}${pt.image}`} alt={pt.name}/></a></li>
                     ))
                 }
-                <li><a href="#"><img src="/src/assets/images/clients/1.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="/src/assets/images/clients/2.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="/src/assets/images/clients/3.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="/src/assets/images/clients/4.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="/src/assets/images/clients/5.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="/src/assets/images/clients/1.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="/src/assets/images/clients/2.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="/src/assets/images/clients/3.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="/src/assets/images/clients/4.jpg" alt=""/></a></li>
-                <li><a href="#"><img src="/src/assets/images/clients/5.jpg" alt=""/></a></li>
             </ul>
         </div>
     </section>

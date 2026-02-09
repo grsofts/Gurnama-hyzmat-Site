@@ -29,10 +29,12 @@
   "services":"Services",
   "projects":"Projects",
   "partners":"Partners",
+  "our_company": "Our Company",
   "testimonial" : "Testimonial",
   "clients":"Clients",
   "question_title" : "Have any Questions?",
   "question_subtitle" : "Give Us a call anytime you want",
   "pages": "Pages",
+  "last_projects": "Last Projects",
   "certificate_subtitle" : "Official documents certifying the quality and reliability of our work"
 }

@@ -1,26 +1,34 @@
+import { useTranslation } from "react-i18next";
+import useSite from "../../../utils/useSite";
+import http from "../../../api/http";
 
 const OurCompany = () => {
+
+    const { t } = useTranslation();
+    const {about } = useSite();
 
     return (
         <section className="default-content-section bg-grey">
     	<div className="outer-container">
             <div className="row clearfix">
                 <div className="text-column col-md-6 col-sm-12 col-xs-12">
-                	<figure className="logo-image"><a href="index.html"><img src="/src/assets/images/resource/logo-image-1.png" alt=""/></a></figure>
-                    <h2>Our Company</h2>
+                	<figure className="logo-image"><a href="index.html"><img width={120} src={http.defaults.baseURL+"/uploads" + about?.small_image} alt=""/></a></figure>
+                    <h2>{t('our_company')}</h2>
                 	<div className="text">
-                    	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                    	<p>{
+                            about?.short_text
+                            }</p>
                     </div>
                     <div className="content-info">
-                    	<strong>Hasib Sharif</strong><div className="designation">Ceo, KBD</div>
+                    	<strong></strong><div className="designation">Gurnama Hyzmaty</div>
                     </div>
                 </div>
                 
 
                 <div className="image-column col-md-6 col-sm-12 col-xs-12">
                 	<div className="inner clearfix">
-                        <figure className="image-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="/src/assets/images/resource/featured-image-4.jpg" alt=""/></figure>
-                        <figure className="video-box wow bounceInUp" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="/src/assets/images/resource/featured-image-5.jpg" alt=""/><a className="lightbox-image play-link" href="http://www.youtube.com/watch?v=opj24KnzrWo"><span className="icon flaticon-play-button"></span></a></figure>
+                        <figure className="image-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms"><img width={570} src={http.defaults.baseURL+"/uploads" + about?.large_image} alt=""/></figure>
+                        {/* <figure className="video-box wow bounceInUp" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="/src/assets/images/resource/featured-image-5.jpg" alt=""/><a className="lightbox-image play-link" href="http://www.youtube.com/watch?v=opj24KnzrWo"><span className="icon flaticon-play-button"></span></a></figure> */}
                     </div>
                 </div>
                 

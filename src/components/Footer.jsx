@@ -1,10 +1,13 @@
 import { useTranslation } from "react-i18next";
 import useSite from "../utils/useSite.jsx";
-import { imagePath } from "../utils/constants.js";
+import { formatDaysAgo, imagePath } from "../utils/constants.js";
+import useProjects from "../hooks/useProjects.jsx";
+import http from "../api/http.js";
 
 const Footer = () => {
     const { t } = useTranslation();
-    const { contacts } = useSite();
+    const { contacts, about } = useSite();
+    const {projects, loading, error} = useProjects();
   return (
     <footer className="main-footer">
         
@@ -19,7 +22,7 @@ const Footer = () => {
                                 	<figure className="footer-logo"><a href="index.html"><img src="/src/assets/images/logo_white.png" style={{height: "50px"}} alt=""/></a></figure>
                                     
                                     <div className="widget-content">
-                                    	<div className="text">It is my duty to distract the reader by just looiking at it </div>
+                                    	<div className="text">{about?.footer_text} </div>
                                         <ul className="contact-info">
                                             {
                                                 contacts?.map((contact, index) => (
@@ -37,11 +40,6 @@ const Footer = () => {
                                     </div>
                                 </div>
                             </div>
-                            
-                            
-                        	
-                            
-                            
                         </div>
                     </div>
                     
@@ -65,22 +63,21 @@ const Footer = () => {
                             
                         	<div className="footer-column col-md-6 col-sm-6 col-xs-12">
                             	<div className="footer-widget posts-widget">
-                                	<h2>Recent Posts</h2>
+                                	<h2>{t('last_projects')}</h2>
                                     <div className="widget-content">
-                                        <div className="post">
-                                            <div className="content">
-                                                <figure className="post-thumb"><a href="#"><img src="/src/assets/images/resource/post-thumb-1.jpg" alt=""/></a></figure>
-                                                <h4><a href="#">It has roots in a piece of classical</a></h4>
-                                                <div className="time">5 hours ago</div>
-                                            </div>
-                                        </div>
-                                        <div className="post">
-                                            <div className="content">
-                                                <figure className="post-thumb"><a href="#"><img src="/src/assets/images/resource/post-thumb-2.jpg" alt=""/></a></figure>
-                                                <h4><a href="#">It has roots in a piece of classical</a></h4>
-                                                <div className="time">5 hours ago</div>
-                                            </div>
-                                        </div>
+                                        {loading && <p>Loading...</p>}
+                                        {error && <p>Error loading posts</p>}
+                                        {!loading && !error && projects.slice(0, 2).map(post => {
+                                            return (
+                                                <div className="post" key={post.id}>
+                                                    <div className="content">
+                                                        <figure className="post-thumb"><a href="#"><img src={http.defaults.baseURL+"/uploads" + post?.images[0].image_url} alt=""/></a></figure>
+                                                        <h4><a href="#">{post.title}</a></h4>
+                                                        <div className="time">{formatDaysAgo(post.completed)}</div>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
                                     </div>
                                 </div>
                             </div>

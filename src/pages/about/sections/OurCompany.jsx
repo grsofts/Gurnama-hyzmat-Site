@@ -1,22 +1,31 @@
+import { useTranslation } from "react-i18next";
+import useSite from "../../../utils/useSite";
+import http from "../../../api/http";
+
 const OurCompany = () => {
+    const {t} = useTranslation();
+    const {about} = useSite();
     return (
         <section className="default-content-section extended">
     	<div className="auto-container">
             <div className="row clearfix">
                 <div className="text-column col-md-7 col-sm-12 col-xs-12">
-                	<figure className="logo-image"><a href="index.html"><img src="/src/assets/images/resource/logo-image-3.png" alt=""/></a></figure>
-                    <h2>Our Company</h2>
+                	<figure className="logo-image"><img width={150} src={http.defaults.baseURL+"/uploads" + about?.small_image} alt=""/></figure>
+                    <h2>{t('our_company')}</h2>
                 	<div className="text">
-                    	<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+                    	<p><div
+                        className="text"
+                        dangerouslySetInnerHTML={{ __html: about?.full_text || '' }}
+                        /></p>
                     </div>
                     <div className="content-info">
-                    	<strong>Hasib Sharif</strong><div className="designation">Ceo, KBD</div>
+                    	<strong>Gurnama Hyzmaty</strong><div className="designation"></div>
                     </div>
                 </div>
                 
                 <div className="image-column col-md-5 col-sm-12 col-xs-12">
                 	<div className="inner clearfix">
-                        <figure className="image-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms"><img src="/src/assets/images/resource/featured-image-24.jpg" alt=""/></figure>
+                        <figure className="image-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms"><img style={{objectFit: "cover"}} width={440} height={750} src={http.defaults.baseURL+"/uploads" + about?.large_image}alt=""/></figure>
                     </div>
                 </div>
                 
