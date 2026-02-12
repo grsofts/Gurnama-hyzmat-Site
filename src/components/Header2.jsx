@@ -13,7 +13,7 @@ const Header2 = () => {
     	<div className="main-box">
             <div className="outer-container clearfix">
                 <div className="logo-box">
-                    <div className="logo"><a href="home"><img src="/src/assets/images/logo_white.png" className="py-4" style={{width: '290px', height: 'auto'}} alt="" /></a></div>
+                    <div className="logo"><a href="/home"><img src="/src/assets/images/logo_white.png" className="py-4" style={{width: '290px', height: 'auto'}} alt="" /></a></div>
                 </div>
                 
                 <div className="nav-outer clearfix">
@@ -28,11 +28,11 @@ const Header2 = () => {
                         
                         <div className="navbar-collapse collapse clearfix">
                             <ul className="navigation clearfix">
-                                <li className={location.pathname === "/home" ? "current" : ""}><a href="home">{t('menu.home')}</a></li>
-                                <li className={location.pathname === "/services" ? "current" : ""}><a href="services">{t('menu.services')}</a></li>
-                                <li className={location.pathname === "/projects" ? "current" : ""}><a href="projects">{t('menu.projects')}</a></li>
-                                <li className={location.pathname === "/about-us" ? "current" : ""}><a href="about-us">{t('menu.aboutus')}</a></li>
-                                <li className={location.pathname === "/contacts" ? "current" : ""}><a href="contacts">{t('menu.contacts')}</a></li>
+                                <li className={location.pathname === "/home" ? "current" : ""}><a href="/home">{t('menu.home')}</a></li>
+                                <li className={location.pathname.startsWith("/services") ? "current" : ""}><a href="/services">{t('menu.services')}</a></li>
+                                <li className={location.pathname.startsWith("/projects") ? "current" : ""}><a href="/projects">{t('menu.projects')}</a></li>
+                                <li className={location.pathname === "/about-us" ? "current" : ""}><a href="/about-us">{t('menu.aboutus')}</a></li>
+                                <li className={location.pathname === "/contacts" ? "current" : ""}><a href="/contacts">{t('menu.contacts')}</a></li>
                             </ul>
                         </div>
                     </nav>

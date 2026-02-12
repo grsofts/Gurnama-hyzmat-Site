@@ -19,7 +19,7 @@ const Footer = () => {
                             
                         	<div className="footer-column col-md-6 col-sm-6 col-xs-12">
                             	<div className="footer-widget about-widget">
-                                	<figure className="footer-logo"><a href="index.html"><img src="/src/assets/images/logo_white.png" style={{height: "50px"}} alt=""/></a></figure>
+                                	<figure className="footer-logo"><a href="/home"><img src="/src/assets/images/logo_white.png" style={{height: "50px"}} alt=""/></a></figure>
                                     
                                     <div className="widget-content">
                                     	<div className="text">{about?.footer_text} </div>
@@ -51,11 +51,11 @@ const Footer = () => {
                                 	<h2>{t('pages')}</h2>
                                     <div className="widget-content">
                                     	<ul className="list">
-                                        	<li><a href="home">{t('menu.home')}</a></li>
-                                            <li><a href="about-us">{t('menu.aboutus')}</a></li>
-                                            <li><a href="services">{t('menu.services')}</a></li>
-                                            <li><a href="projects">{t('menu.projects')}</a></li>
-                                            <li><a href="contacts">{t('menu.contacts')}</a></li>
+                                        	<li><a href="/home">{t('menu.home')}</a></li>
+                                            <li><a href="/about-us">{t('menu.aboutus')}</a></li>
+                                            <li><a href="/services">{t('menu.services')}</a></li>
+                                            <li><a href="/projects">{t('menu.projects')}</a></li>
+                                            <li><a href="/contacts">{t('menu.contacts')}</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -67,7 +67,8 @@ const Footer = () => {
                                     <div className="widget-content">
                                         {loading && <p>Loading...</p>}
                                         {error && <p>Error loading posts</p>}
-                                        {!loading && !error && projects.slice(0, 2).map(post => {
+                                        {!loading && !error && projects.slice() // копия массива, чтобы не мутировать оригинал
+                                            .sort((a, b) => new Date(b.completed) - new Date(a.completed)).slice(0, 2).map(post => {
                                             return (
                                                 <div className="post" key={post.id}>
                                                     <div className="content">

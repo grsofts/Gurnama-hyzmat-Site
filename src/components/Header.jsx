@@ -83,7 +83,7 @@ const Header = () => {
                 	
                 	<div className="pull-left logo-outer">
                     	<div className="logo">
-                            <a href="home">
+                            <a href="/home">
                             <div className="d-flex align-items-start">
                                 <img src="/src/assets/images/logo_white.png" style={{width: '320px', height: 'auto'}} alt="Factorian" title="Factorian"/>
                             </div>
@@ -136,11 +136,11 @@ const Header = () => {
                                 
                                 <div className="navbar-collapse collapse clearfix">
                                     <ul className="navigation clearfix">
-                                        <li className="current"><a href="home">{t('menu.home')}</a></li>
-                                        <li className=""><a href="services">{t('menu.services')}</a></li>
-                                        <li className=""><a href="projects">{t('menu.projects')}</a></li>
-                                        <li className=""><a href="about-us">{t('menu.aboutus')}</a></li>
-                                        <li><a href="contacts">{t('menu.contacts')}</a></li>
+                                        <li className="current"><a href="/home">{t('menu.home')}</a></li>
+                                        <li className=""><a href="/services">{t('menu.services')}</a></li>
+                                        <li className=""><a href="/projects">{t('menu.projects')}</a></li>
+                                        <li className=""><a href="/about-us">{t('menu.aboutus')}</a></li>
+                                        <li><a href="/contacts">{t('menu.contacts')}</a></li>
                                     </ul>
                                 </div>
                             </nav>

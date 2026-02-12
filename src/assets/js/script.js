@@ -384,33 +384,33 @@ global.initTemplate = function () {
 	}
 	
 	//Two Column Image Carousel
-	if ($('.image-carousel .two-col-carousel').length) {
-		$('.image-carousel .two-col-carousel').owlCarousel({
-			loop:true,
-			margin:10,
-			nav:true,
-			smartSpeed: 500,
-			autoplay: 4000,
-			navText: [ '<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>' ],
-			responsive:{
-				0:{
-					items:1
-				},
-				480:{
-					items:1
-				},
-				600:{
-					items:1
-				},
-				800:{
-					items:2
-				},
-				1024:{
-					items:2
-				}
-			}
-		});    		
-	}
+	// if ($('.image-carousel .two-col-carousel').length) {
+	// 	$('.image-carousel .two-col-carousel').owlCarousel({
+	// 		loop:true,
+	// 		margin:10,
+	// 		nav:true,
+	// 		smartSpeed: 500,
+	// 		autoplay: 4000,
+	// 		navText: [ '<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>' ],
+	// 		responsive:{
+	// 			0:{
+	// 				items:1
+	// 			},
+	// 			480:{
+	// 				items:1
+	// 			},
+	// 			600:{
+	// 				items:1
+	// 			},
+	// 			800:{
+	// 				items:1
+	// 			},
+	// 			1024:{
+	// 				items:1
+	// 			}
+	// 		}
+	// 	});    		
+	// }
 	
 	//Featured Projects Carousel
 	if ($('.featured-project-carousel').length) {
@@ -860,4 +860,106 @@ global.initTemplate = function () {
 	
 }})(window);
 
+window.initCarousel = function () {
+    const $ = window.jQuery;
+    if(!$) {
+        console.error("jQuery is not loaded");
+        return;
+    }
+    
+    "use strict";
+    const $carousels = $('.image-carousel .two-col-carousel');
+    if (!$carousels.length) return;
+
+    $carousels.each(function() {
+		const $carousel = $(this);
+        
+        // Функция инициализации
+       function initializeOwl() {
+			const $carousel = $('.image-carousel .two-col-carousel');
+			
+			if ($carousel.length) {
+				const itemsCount = $carousel.find('li').length;
+				
+				// Если только 1 элемент - отключаем loop и навигацию
+				if (itemsCount <= 1) {
+					$carousel.owlCarousel({
+						loop: false,        // отключаем loop
+						margin: 10,
+						nav: false,         // отключаем навигацию
+						dots: false,        // отключаем точки
+						smartSpeed: 500,
+						autoplay: false,    // отключаем автоплей
+						navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
+						responsive:{
+							0: { items: 1 },
+							480: { items: 1 },
+							600: { items: 1 },
+							800: { items: 1 },
+							1024: { items: 1 }
+						}
+					});
+				} else {
+					// Нормальная инициализация для 2+ элементов
+					$carousel.owlCarousel({
+						loop: true,
+						margin: 10,
+						nav: true,
+						smartSpeed: 500,
+						autoplay: 4000,
+						navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
+						responsive:{
+							0: { items: 1 },
+							480: { items: 1 },
+							600: { items: 1 },
+							800: { items: 1 },
+							1024: { items: 1 }
+						},
+						onInitialized: function() {
+							// console.log('Carousel with multiple items initialized');
+						}
+					});
+				}
+			}
+		}
+
+        // Если карусель уже инициализирована
+        if ($carousel.hasClass('owl-carousel')) {
+            console.log('Destroying existing carousel');
+            
+            // Сохраняем HTML перед уничтожением
+            const originalHtml = $carousel.html();
+            
+            // Подписываемся на событие уничтожения
+            $carousel.one('destroyed.owl.carousel', function() {
+                console.log('Carousel destroyed, reinitializing...');
+                
+                // Очищаем все следы Owl
+                $carousel.removeClass('owl-carousel owl-loaded');
+                $carousel.find('.owl-stage-outer, .owl-stage, .owl-nav, .owl-dots, .owl-item, .owl-cloned').remove();
+                
+                // Восстанавливаем оригинальный HTML
+                $carousel.html(originalHtml);
+                
+                // Инициализируем заново
+                initializeOwl();
+            });
+            
+            // Запускаем уничтожение
+            try {
+                $carousel.trigger('destroy.owl.carousel');
+            } catch(e) {
+                console.log('Destroy error, forcing reinit:', e);
+                // Если destroy не сработал, принудительно очищаем
+                $carousel.removeClass('owl-carousel owl-loaded');
+                $carousel.find('.owl-stage-outer, .owl-stage, .owl-nav, .owl-dots, .owl-item, .owl-cloned').remove();
+                $carousel.html(originalHtml);
+                initializeOwl();
+            }
+        } else {
+            // Первая инициализация
+            initializeOwl();
+        }
+    });
+};
 

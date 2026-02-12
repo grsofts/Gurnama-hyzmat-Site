@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import useServices from "../../../hooks/useServices";
 import { imagePath } from "../../../utils/constants";
+import { Link } from "react-router-dom";
 
 const OurServices = () => {
     const {t} = useTranslation();
@@ -22,7 +23,7 @@ const OurServices = () => {
                             <div className="inner-box wow fadeInLeft" data-wow-delay={`${index * 100}ms`} data-wow-duration="1500ms">
                                 <figure className="image-box">
                                     <img height={250} style={{ objectFit: "cover" }} src={`${imagePath}${service.image}`} alt={service.title} />
-                                    <a href="#" className="overlay-box"><span className="icon flaticon-arrows-9"></span></a>
+                                    <Link to={`/services/${service.id}`} className="overlay-box"><span className="icon flaticon-arrows-9"></span></Link>
                                 </figure>
                                 <div className="lower-box">
                                     <h3 className="sub-title"></h3>

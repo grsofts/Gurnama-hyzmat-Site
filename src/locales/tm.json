@@ -25,6 +25,10 @@
     "subject": "Hatyň mowzugy",
     "message": "Siziň hatyňyz"
   },
+  "client":"Müşderi",
+  "completed":"Ýerine ýetirildi",
+  "tags":"Tegler",
+  "description":"Giňişleýin düşündiriş",
   "our":"Biziň",
   "services":"Hyzmatlarymyz",
   "projects":"Işlerimiz",
@@ -36,5 +40,8 @@
   "question_subtitle" : "Islendik wagt biz bilen habarlaşyp bilersiňiz",
   "pages": "Sahypalar",
   "last_projects": "Soňky işler",
-  "certificate_subtitle" : "Bizim işimiziň hilini we ygtybarlylygyny tassyklaýan resmi resminamalar"
+  "certificate_subtitle" : "Bizim işimiziň hilini we ygtybarlylygyny tassyklaýan resmi resminamalar",
+  "address":"Salgymyz",
+  "mail":"Elektron poçtamyz",
+  "phone":"Telefon belgimiz"
 }

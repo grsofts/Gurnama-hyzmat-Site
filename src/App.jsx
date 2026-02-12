@@ -9,6 +9,8 @@ import AboutUs from './pages/about/AboutUs';
 import Services from './pages/services/Services';
 import Projects from './pages/projects/Projects';
 import NotFound from './pages/404/404';
+import SingleProject from './pages/projects/single/SingleProject';
+import SingleService from './pages/services/single/SingleService';
 // import { useTranslation } from 'react-i18next';
 
 
@@ -39,7 +41,9 @@ function App() {
         <Route path="contacts" element={<Contacts />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="services" element={<Services />} />
+        <Route path="services/:id" element={<SingleService />} />
         <Route path="projects" element={<Projects  />} />
+        <Route path='projects/:id' element={<SingleProject/>}/>
       </Route>
 
       {/* FALLBACK */}

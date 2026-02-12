@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import bannersService from "../../../api/sliders.service";
 import { useTranslation } from "react-i18next";
 import { imagePath } from "../../../utils/constants";

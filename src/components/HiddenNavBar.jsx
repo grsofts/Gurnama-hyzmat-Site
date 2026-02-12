@@ -19,11 +19,11 @@ const HiddenNavBar = () => {
             
             <div className="side-menu">
                 <ul className="navigation clearfix">
-                    <li className={location.pathname === "/home" ? "current" : ""}><a href="home">{t('menu.home')}</a></li>
-                    <li className={location.pathname === "/services" ? "current" : ""}><a href="services">{t('menu.services')}</a></li>
-                    <li className={location.pathname === "/projects" ? "current" : ""}><a href="projects">{t('menu.projects')}</a></li>
-                    <li className={location.pathname === "/about-us" ? "current" : ""}><a href="about-us">{t('menu.aboutus')}</a></li>
-                    <li className={location.pathname === "/contacts" ? "current" : ""}><a href="contacts">{t('menu.contacts')}</a></li>
+                    <li className={location.pathname === "/home" ? "current" : ""}><a href="/home">{t('menu.home')}</a></li>
+                    <li className={location.pathname === "/services" ? "current" : ""}><a href="/services">{t('menu.services')}</a></li>
+                    <li className={location.pathname === "/projects" ? "current" : ""}><a href="/projects">{t('menu.projects')}</a></li>
+                    <li className={location.pathname === "/about-us" ? "current" : ""}><a href="/about-us">{t('menu.aboutus')}</a></li>
+                    <li className={location.pathname === "/contacts" ? "current" : ""}><a href="/contacts">{t('menu.contacts')}</a></li>
                 </ul>
             </div>
         

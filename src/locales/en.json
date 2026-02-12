@@ -26,6 +26,10 @@
     "message": "Your message"
   },
   "our":"Our",
+  "client":"Client",
+  "completed":"Completed",
+  "tags":"Tags",
+  "description":"Description",
   "services":"Services",
   "projects":"Projects",
   "partners":"Partners",
@@ -36,5 +40,8 @@
   "question_subtitle" : "Give Us a call anytime you want",
   "pages": "Pages",
   "last_projects": "Last Projects",
-  "certificate_subtitle" : "Official documents certifying the quality and reliability of our work"
+  "certificate_subtitle" : "Official documents certifying the quality and reliability of our work",
+  "address":"Our address",
+  "mail":"Our Email",
+  "phone":"Call us"
 }

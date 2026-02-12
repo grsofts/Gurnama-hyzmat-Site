@@ -42,7 +42,7 @@ const OurProjects = () => {
                                         </div>
                                     </div>
                                     <div className="caption">
-                                        <h3><a href={'project?id='+project.id}>{project.title}</a></h3>
+                                        <h3><a href={'projects/'+project.id}>{project.title}</a></h3>
                                     </div>
                                 </div>
                             </div>

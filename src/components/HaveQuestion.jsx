@@ -14,7 +14,7 @@ const HaveQuestion = () => {
                 </div>
                 
                 <div className="right-column">
-                    <a href="contacts" className="theme-btn btn-style-two">{t('buttons.feedback')}</a>
+                    <a href="/contacts" className="theme-btn btn-style-two">{t('buttons.feedback')}</a>
                 </div>
 			</div>            
         </div>
