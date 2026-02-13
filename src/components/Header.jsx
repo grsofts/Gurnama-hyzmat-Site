@@ -22,7 +22,7 @@ const Header = () => {
                     
                     <div className="top-left col-md-4 col-sm-4 col-xs-12">
                     	<ul>
-                        	<li><span className="icon fa fa-clock-o"></span> Mon - Sat : 9 am - 9 pm</li>
+                        	<li><span className="icon fa fa-clock-o"></span> {t('grafik')}: 9:00 - 18:00</li>
                         </ul>
                     </div>
                     

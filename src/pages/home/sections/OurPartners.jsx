@@ -33,7 +33,7 @@ const OurPartners = () => {
             <ul className="sponsors-slider">
                 {
                     partners.map(pt => (
-                        <li key={pt.id} style={{ height: '190px !important'}}><a href="#"><img height={150} width={150} style={{objectFit: 'contain', height: '190px !important'}} src={`${imagePath}${pt.image}`} alt={pt.name}/></a></li>
+                        <li key={pt.id} style={{ height: '190px !important'}}><a href={pt.link} target="_blank"><img height={150} width={150} style={{objectFit: 'contain', height: '190px !important'}} src={`${imagePath}${pt.image}`} alt={pt.name}/></a></li>
                     ))
                 }
             </ul>

@@ -16,7 +16,7 @@ const Form = () => {
         message: ''
     });
 
-    console.log(import.meta.env);
+    console.log(import.meta.env.VITE_CAPTCHA_PUBLIC_TEST);
 
 
     const handleChange = (e) => {
@@ -30,6 +30,8 @@ const Form = () => {
 
 
     const handleSubmit=async (e)=>{
+        console.log('Token',captchaToken);
+        
         e.preventDefault();
 
         if (!captchaToken) {

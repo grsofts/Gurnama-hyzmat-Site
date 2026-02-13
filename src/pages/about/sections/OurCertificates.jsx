@@ -38,7 +38,7 @@ const OurCertificates = () => {
                     certificates.map((cert, index) => (
                         <div key={index} className="featured-service-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                             <div className="inner-box wow fadeIn" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <figure className="image-box"><a href="service-single.html"><img height={219} src={imagePath + cert.image} alt=""/></a></figure>
+                                <figure className="image-box"><a href="#"><img height={219} src={imagePath + cert.image} alt=""/></a></figure>
                                 <div className="lower-content">
                                     <h3>{cert.name}</h3>
                                     <div className="text"></div>
