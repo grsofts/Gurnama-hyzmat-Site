@@ -4,7 +4,7 @@ const lang = localStorage.getItem("lang") || "ru";
 
 export const BannersService = {
   getBanners: async () => {
-    const response = await http.get(`/api/sliders?lang=${lang}`);
+    const response = await http.get(`/api/sliders?lang=${lang}&site=true`);
     return response.data;
   },
   getBannerById: async (id) => {

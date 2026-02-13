@@ -4,7 +4,7 @@ const lang = localStorage.getItem("lang") || "tm";
 
 export const HyzmatService = {
   getServices: async () => {
-    const response = await http.get(`/api/services?lang=${lang}`);
+    const response = await http.get(`/api/services?lang=${lang}&site=true`);
     return response.data;
   },
   getServiceById: async (id) => {

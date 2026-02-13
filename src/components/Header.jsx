@@ -19,7 +19,6 @@ const Header = () => {
     	<div className="header-top">
         	<div className="outer-container">
             	<div className="row clearfix">
-                    
                     <div className="top-left col-md-4 col-sm-4 col-xs-12">
                     	<ul>
                         	<li><span className="icon fa fa-clock-o"></span> {t('grafik')}: 9:00 - 18:00</li>

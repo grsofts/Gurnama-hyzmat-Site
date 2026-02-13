@@ -4,7 +4,7 @@ const lang = localStorage.getItem("lang") || "tm";
 
 export const CertificateService = {
   getCertificates: async () => {
-    const response = await http.get(`/api/certificates?lang=${lang}`);
+    const response = await http.get(`/api/certificates?lang=${lang}&site=true`);
     return response.data;
   },
   getCertificateById: async (id) => {

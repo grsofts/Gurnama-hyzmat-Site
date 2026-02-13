@@ -4,7 +4,7 @@ const lang = localStorage.getItem("lang") || "tm";
 
 export const ProjectService = {
   getProjects: async () => {
-    const response = await http.get(`/api/projects?lang=${lang}`);
+    const response = await http.get(`/api/projects?lang=${lang}&site=true`);
     return response.data;
   },
   getProjectById: async (id) => {

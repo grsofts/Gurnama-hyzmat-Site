@@ -4,7 +4,7 @@ const lang = localStorage.getItem("lang") || "tm";
 
 export const PartnerService = {
   getPartners: async () => {
-    const response = await http.get(`/api/partners?lang=${lang}`);
+    const response = await http.get(`/api/partners?lang=${lang}&site=true`);
     return response.data;
   },
   getPartnerById: async (id) => {
